@@ -1,7 +1,7 @@
 package com.kmvpsolutions.ao.boutiquespringboot.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Category;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CategoryDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CategoryDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

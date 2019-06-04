@@ -1,17 +1,16 @@
-package com.kmvpsolutions.ao.boutiquespringboot.resources;
+package com.kmvpsolutions.ao.customerservice.resources;
 
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CustomerDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.services.CustomerService;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CustomerDTO;
+import com.kmvpsolutions.ao.boutiquecommons.utilities.Web;
+import com.kmvpsolutions.ao.customerservice.services.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.kmvpsolutions.ao.boutiquespringboot.commons.utilities.Web.API;
-
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(API + "/customers")
+@RequestMapping(Web.API + "/customers")
 public class CustomerResource {
 
     private final CustomerService customerService;

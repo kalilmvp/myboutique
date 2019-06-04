@@ -1,13 +1,12 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.customerservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.OrderDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Cart;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Customer;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CartDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.CartStatus;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.CartRepository;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.CustomerRepository;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CartDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderDTO;
+import com.kmvpsolutions.ao.customerservice.entities.Cart;
+import com.kmvpsolutions.ao.customerservice.entities.Customer;
+import com.kmvpsolutions.ao.customerservice.enums.CartStatus;
+import com.kmvpsolutions.ao.customerservice.repositories.CartRepository;
+import com.kmvpsolutions.ao.customerservice.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,7 +23,7 @@ public class  CartService {
 
     private final CartRepository cartRepository;
     private final CustomerRepository customerRepository;
-    private final OrderService orderService;
+    //private final OrderService orderService;
 
     public List<CartDTO> findAll() {
         log.debug("Request to get all carts");

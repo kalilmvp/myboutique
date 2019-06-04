@@ -1,7 +1,7 @@
-package com.kmvpsolutions.ao.boutiquespringboot.entities;
+package com.kmvpsolutions.ao.customerservice.entities;
 
-import com.kmvpsolutions.ao.boutiquespringboot.commons.domain.AbstractEntity;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.CartStatus;
+import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
+import com.kmvpsolutions.ao.customerservice.enums.CartStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

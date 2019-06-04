@@ -1,7 +1,7 @@
 package com.kmvpsolutions.ao.boutiquespringboot.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Address;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.AddressDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.AddressDTO;
 import org.springframework.stereotype.Service;
 
 @Service

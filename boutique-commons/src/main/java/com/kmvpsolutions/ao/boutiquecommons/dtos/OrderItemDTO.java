@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.commons.dtos;
+package com.kmvpsolutions.ao.boutiquecommons.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -3,7 +3,7 @@ package com.kmvpsolutions.ao.boutiquespringboot.services;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.OrderItem;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Product;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.OrderItemDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderItemDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderItemRepository;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.ProductRepository;

@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.commons.utilities;
+package com.kmvpsolutions.ao.boutiquecommons.utilities;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;

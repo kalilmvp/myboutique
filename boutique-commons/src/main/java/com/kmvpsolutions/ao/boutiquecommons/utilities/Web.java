@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.commons.utilities;
+package com.kmvpsolutions.ao.boutiquecommons.utilities;
 
 public class Web {
     public static final String API = "/api";

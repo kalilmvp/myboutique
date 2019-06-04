@@ -1,7 +1,7 @@
-package com.kmvpsolutions.ao.boutiquespringboot.repository;
+package com.kmvpsolutions.ao.customerservice.repositories;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Cart;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.CartStatus;
+import com.kmvpsolutions.ao.customerservice.entities.Cart;
+import com.kmvpsolutions.ao.customerservice.enums.CartStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

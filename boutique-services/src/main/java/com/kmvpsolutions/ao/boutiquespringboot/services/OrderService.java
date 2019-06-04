@@ -2,7 +2,7 @@ package com.kmvpsolutions.ao.boutiquespringboot.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Cart;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.OrderDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.enums.OrderStatus;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;

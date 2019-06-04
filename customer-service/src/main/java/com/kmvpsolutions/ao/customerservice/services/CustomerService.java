@@ -1,8 +1,8 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.customerservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Customer;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CustomerDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.CustomerRepository;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CustomerDTO;
+import com.kmvpsolutions.ao.customerservice.entities.Customer;
+import com.kmvpsolutions.ao.customerservice.repositories.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

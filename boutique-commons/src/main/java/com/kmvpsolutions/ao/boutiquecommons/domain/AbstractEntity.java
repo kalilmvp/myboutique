@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.commons.domain;
+package com.kmvpsolutions.ao.boutiquecommons.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;

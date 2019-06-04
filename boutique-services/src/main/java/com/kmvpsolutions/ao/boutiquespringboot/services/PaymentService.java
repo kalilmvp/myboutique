@@ -3,7 +3,7 @@ package com.kmvpsolutions.ao.boutiquespringboot.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Payment;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.PaymentDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.PaymentDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.enums.PaymentStatus;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.PaymentRepository;

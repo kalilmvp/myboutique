@@ -1,13 +1,13 @@
 package com.kmvpsolutions.ao.boutiquespringboot.resources;
 
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CategoryDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CategoryDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.kmvpsolutions.ao.boutiquespringboot.commons.utilities.Web.API;
+import static com.kmvpsolutions.ao.boutiquecommons.utilities.Web.API;
 
 @RequiredArgsConstructor
 @RestController

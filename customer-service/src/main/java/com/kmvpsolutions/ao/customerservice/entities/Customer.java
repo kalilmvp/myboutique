@@ -1,7 +1,7 @@
-package com.kmvpsolutions.ao.boutiquespringboot.entities;
+package com.kmvpsolutions.ao.customerservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.domain.AbstractEntity;
+import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,9 +1,8 @@
-package com.kmvpsolutions.ao.boutiquespringboot.resources;
+package com.kmvpsolutions.ao.customerservice.resources;
 
-import static com.kmvpsolutions.ao.boutiquespringboot.commons.utilities.Web.*;
-
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.CartDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.services.CartService;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CartDTO;
+import com.kmvpsolutions.ao.boutiquecommons.utilities.Web;
+import com.kmvpsolutions.ao.customerservice.services.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(API + "/carts")
+@RequestMapping(Web.API + "/carts")
 public class CartResource {
 
     private final CartService cartService;

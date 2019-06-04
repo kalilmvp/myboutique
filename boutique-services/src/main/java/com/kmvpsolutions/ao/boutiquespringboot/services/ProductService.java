@@ -1,7 +1,7 @@
 package com.kmvpsolutions.ao.boutiquespringboot.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Product;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.dtos.ProductDTO;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.ProductDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.enums.ProductStatus;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.CategoryRepository;
 import com.kmvpsolutions.ao.boutiquespringboot.repository.ProductRepository;

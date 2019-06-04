@@ -1,7 +1,7 @@
 package com.kmvpsolutions.ao.boutiquespringboot.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.kmvpsolutions.ao.boutiquespringboot.commons.domain.AbstractEntity;
+import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
 import com.kmvpsolutions.ao.boutiquespringboot.enums.ProductStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;

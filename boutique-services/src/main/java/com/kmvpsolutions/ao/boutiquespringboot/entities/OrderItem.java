@@ -1,6 +1,6 @@
 package com.kmvpsolutions.ao.boutiquespringboot.entities;
 
-import com.kmvpsolutions.ao.boutiquespringboot.commons.domain.AbstractEntity;
+import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
