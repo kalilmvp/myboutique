@@ -33,7 +33,7 @@ public class OrderService {
 
     public List<OrderDTO> findAllByUser(Long customerId) {
         log.debug("Find all orders by user");
-        return this.orderRepository.findByCartCustomer_Id(customerId)
+        return this.orderRepository.findByCartId(customerId)
                 .stream()
                 .map(OrderService::mapToDTO)
                 .collect(Collectors.toList());
