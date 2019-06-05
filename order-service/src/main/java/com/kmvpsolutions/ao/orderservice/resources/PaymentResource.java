@@ -1,7 +1,7 @@
-package com.kmvpsolutions.ao.boutiquespringboot.resources;
+package com.kmvpsolutions.ao.orderservice.resources;
 
 import com.kmvpsolutions.ao.boutiquecommons.dtos.PaymentDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.services.PaymentService;
+import com.kmvpsolutions.ao.orderservice.services.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

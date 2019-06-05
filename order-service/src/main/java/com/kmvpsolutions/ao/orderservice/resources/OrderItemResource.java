@@ -1,7 +1,7 @@
-package com.kmvpsolutions.ao.boutiquespringboot.resources;
+package com.kmvpsolutions.ao.orderservice.resources;
 
 import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderItemDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.services.OrderItemService;
+import com.kmvpsolutions.ao.orderservice.services.OrderItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
