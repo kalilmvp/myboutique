@@ -1,11 +1,12 @@
-package com.kmvpsolutions.ao.boutiquespringboot.entities;
+package com.kmvpsolutions.ao.orderservice.entities;
 
 import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.PaymentStatus;
+import com.kmvpsolutions.ao.orderservice.enums.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

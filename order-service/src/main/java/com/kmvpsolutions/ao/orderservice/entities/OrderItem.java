@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.entities;
+package com.kmvpsolutions.ao.orderservice.entities;
 
 import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
 import lombok.AllArgsConstructor;

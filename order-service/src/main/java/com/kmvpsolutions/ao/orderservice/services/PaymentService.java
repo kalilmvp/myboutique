@@ -1,12 +1,12 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.orderservice.services;
 
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Payment;
 import com.kmvpsolutions.ao.boutiquecommons.dtos.PaymentDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.PaymentStatus;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.PaymentRepository;
+import com.kmvpsolutions.ao.orderservice.entities.Order;
+import com.kmvpsolutions.ao.orderservice.entities.Payment;
+import com.kmvpsolutions.ao.orderservice.enums.PaymentStatus;
+import com.kmvpsolutions.ao.orderservice.repositories.OrderRepository;
+import com.kmvpsolutions.ao.orderservice.repositories.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

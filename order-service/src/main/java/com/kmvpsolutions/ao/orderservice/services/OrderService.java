@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.orderservice.services;
 
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Cart;
 import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;

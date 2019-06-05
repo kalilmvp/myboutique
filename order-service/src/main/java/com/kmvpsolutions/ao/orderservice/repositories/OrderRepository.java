@@ -1,6 +1,6 @@
-package com.kmvpsolutions.ao.boutiquespringboot.repository;
+package com.kmvpsolutions.ao.orderservice.repositories;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
+import com.kmvpsolutions.ao.orderservice.entities.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
