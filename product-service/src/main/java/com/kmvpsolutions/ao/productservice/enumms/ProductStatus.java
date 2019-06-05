@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.enums;
+package com.kmvpsolutions.ao.productservice.enumms;
 
 public enum ProductStatus {
     AVAILABLE, DISCONTINUED;

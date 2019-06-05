@@ -1,8 +1,8 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.productservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Review;
 import com.kmvpsolutions.ao.boutiquecommons.dtos.ReviewDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.ReviewRepository;
+import com.kmvpsolutions.ao.productservice.entities.Review;
+import com.kmvpsolutions.ao.productservice.repositories.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.resources;
+package com.kmvpsolutions.ao.productservice.resources;
 
 import com.kmvpsolutions.ao.boutiquecommons.dtos.ProductDTO;
 import com.kmvpsolutions.ao.boutiquespringboot.services.ProductService;

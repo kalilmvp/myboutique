@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquespringboot.entities;
+package com.kmvpsolutions.ao.productservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;

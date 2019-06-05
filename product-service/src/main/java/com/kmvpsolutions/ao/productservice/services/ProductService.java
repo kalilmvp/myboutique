@@ -1,10 +1,10 @@
-package com.kmvpsolutions.ao.boutiquespringboot.services;
+package com.kmvpsolutions.ao.productservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Product;
 import com.kmvpsolutions.ao.boutiquecommons.dtos.ProductDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.ProductStatus;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.CategoryRepository;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.ProductRepository;
+import com.kmvpsolutions.ao.productservice.entities.Product;
+import com.kmvpsolutions.ao.productservice.enumms.ProductStatus;
+import com.kmvpsolutions.ao.productservice.repositories.CategoryRepository;
+import com.kmvpsolutions.ao.productservice.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

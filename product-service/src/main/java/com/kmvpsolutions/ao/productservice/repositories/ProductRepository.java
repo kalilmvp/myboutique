@@ -1,6 +1,6 @@
-package com.kmvpsolutions.ao.boutiquespringboot.repository;
+package com.kmvpsolutions.ao.productservice.repositories;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Product;
+import com.kmvpsolutions.ao.productservice.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
