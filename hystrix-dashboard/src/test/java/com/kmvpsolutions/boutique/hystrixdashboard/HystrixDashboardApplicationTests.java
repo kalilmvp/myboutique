@@ -1,4 +1,4 @@
-package com.kmvpsolutions.ao.boutiquecommons;
+package com.kmvpsolutions.boutique.hystrixdashboard;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BoutiqueCommonsApplicationTests {
+public class HystrixDashboardApplicationTests {
 
     @Test
     public void contextLoads() {
