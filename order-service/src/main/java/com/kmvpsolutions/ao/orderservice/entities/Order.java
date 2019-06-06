@@ -2,7 +2,7 @@ package com.kmvpsolutions.ao.orderservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kmvpsolutions.ao.boutiquecommons.domain.AbstractEntity;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.OrderStatus;
+import com.kmvpsolutions.ao.orderservice.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

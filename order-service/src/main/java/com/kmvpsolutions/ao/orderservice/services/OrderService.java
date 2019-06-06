@@ -1,10 +1,10 @@
 package com.kmvpsolutions.ao.orderservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Cart;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.CartDTO;
 import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.enums.OrderStatus;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
+import com.kmvpsolutions.ao.orderservice.entities.Order;
+import com.kmvpsolutions.ao.orderservice.enums.OrderStatus;
+import com.kmvpsolutions.ao.orderservice.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -61,7 +61,7 @@ public class OrderService {
         )));
     }
 
-    public Order create(Cart cart) {
+    public Order create(CartDTO cart) {
         log.debug("Create a order with a cart {}", cart);
 
         return this.orderRepository.save(new Order(

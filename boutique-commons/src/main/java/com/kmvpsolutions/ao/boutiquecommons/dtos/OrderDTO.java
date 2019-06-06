@@ -17,4 +17,8 @@ public class OrderDTO {
     private PaymentDTO payment;
     private AddressDTO shipmentAddress;
     private Set<OrderItemDTO> orderItems;
+
+    public static void main(String[] args) {
+
+    }
 }

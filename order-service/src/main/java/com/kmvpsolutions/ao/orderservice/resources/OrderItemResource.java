@@ -32,7 +32,7 @@ public class OrderItemResource {
     }
 
     @PostMapping
-    public OrderItemDTO create(OrderItemDTO orderItemDTO) {
+    public OrderItemDTO create(@RequestBody OrderItemDTO orderItemDTO) {
         return this.orderItemService.create(orderItemDTO);
     }
 }

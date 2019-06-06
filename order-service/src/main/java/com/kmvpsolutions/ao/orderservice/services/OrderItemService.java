@@ -1,12 +1,12 @@
 package com.kmvpsolutions.ao.orderservice.services;
 
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Order;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.OrderItem;
-import com.kmvpsolutions.ao.boutiquespringboot.entities.Product;
 import com.kmvpsolutions.ao.boutiquecommons.dtos.OrderItemDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderItemRepository;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.OrderRepository;
-import com.kmvpsolutions.ao.boutiquespringboot.repository.ProductRepository;
+import com.kmvpsolutions.ao.boutiquecommons.dtos.ProductDTO;
+import com.kmvpsolutions.ao.orderservice.client.ProductServiceClient;
+import com.kmvpsolutions.ao.orderservice.entities.Order;
+import com.kmvpsolutions.ao.orderservice.entities.OrderItem;
+import com.kmvpsolutions.ao.orderservice.repositories.OrderItemRepository;
+import com.kmvpsolutions.ao.orderservice.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class OrderItemService {
 
     private final OrderItemRepository orderItemRepository;
     private final OrderRepository orderRepository;
-    private ProductRepository productRepository;
+    private final ProductServiceClient productServiceClient;
 
     public List<OrderItemDTO> findAll() {
         log.debug("Request to get all order items");
@@ -45,12 +45,13 @@ public class OrderItemService {
         log.debug("Request to create an order item: {}", orderItemDTO);
         Order order = this.orderRepository.findById(orderItemDTO.getOrderId()).orElseThrow(() ->
                 new IllegalStateException("The order does not exist!"));
-        Product product = this.productRepository.findById(orderItemDTO.getProductId()).orElseThrow(() ->
+
+        ProductDTO productDTO = this.productServiceClient.getProductById(orderItemDTO.getProductId()).orElseThrow(() ->
                 new IllegalStateException("The product does not exist!"));
 
         return mapToDTO(this.orderItemRepository.save(new OrderItem(
                 orderItemDTO.getQuantity(),
-                product.getId(),
+                productDTO.getId(),
                 order
         )));
     }

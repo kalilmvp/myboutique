@@ -1,7 +1,7 @@
 package com.kmvpsolutions.ao.productservice.resources;
 
 import com.kmvpsolutions.ao.boutiquecommons.dtos.ReviewDTO;
-import com.kmvpsolutions.ao.boutiquespringboot.services.ReviewService;
+import com.kmvpsolutions.ao.productservice.services.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

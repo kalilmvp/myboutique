@@ -55,7 +55,6 @@ public class CategoryService {
                 category.getId(),
                 category.getName(),
                 category.getDescription(),
-                category.getProducts().stream().map(ProductService::mapToDTO).collect(Collectors.toSet())
-        );
+                Collections.emptySet());
     }
 }
