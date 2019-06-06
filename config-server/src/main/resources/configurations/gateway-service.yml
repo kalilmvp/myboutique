@@ -1,6 +1,10 @@
 server:
   port: 8222
 
+eureka:
+  client:
+    fetchRegistry: true
+
 zuul:
   routes:
     order:

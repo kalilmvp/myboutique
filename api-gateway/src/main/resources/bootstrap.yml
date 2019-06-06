@@ -4,3 +4,12 @@ spring:
       uri: http://localhost:8888
   application:
     name: gateway-service
+
+zuul:
+  routes:
+    customer:
+      path: /customer/**
+    product:
+      path: /product/**
+    order:
+      path: /order/**
