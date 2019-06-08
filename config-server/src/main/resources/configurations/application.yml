@@ -18,3 +18,8 @@ management:
     web:
       exposure:
         include: "*"
+
+logstash:
+  host: localhost
+  port: 5000
+  queue-size: 512
