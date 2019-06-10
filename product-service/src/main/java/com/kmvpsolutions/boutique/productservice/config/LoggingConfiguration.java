@@ -43,31 +43,36 @@ public class LoggingConfiguration {
     private void addLogStashAppender(LoggerContext context) {
         LOG.info("Initializing log stash appending");
 
-        LogstashTcpSocketAppender logstashTcpSocketAppender = new LogstashTcpSocketAppender();
-        logstashTcpSocketAppender.setName(LOG_STASH_APPENDER_NAME);
-        logstashTcpSocketAppender.setContext(context);
-        logstashTcpSocketAppender.addDestinations(
+        LogstashTcpSocketAppender logstashAppender = new LogstashTcpSocketAppender();
+        logstashAppender.setName(LOG_STASH_APPENDER_NAME);
+        logstashAppender.setContext(context);
+        String customFields = "{\"servicename\":\"" + this.appName + "\"}";
+
+        // More documentation is available at: https://github.com/logstash/logstash-logback-encoder
+        LogstashEncoder logstashEncoder = new LogstashEncoder();
+        // Set the Logstash appender config
+        logstashEncoder.setCustomFields(customFields);
+        // Set the Logstash appender config
+        logstashAppender.addDestinations(
                 new InetSocketAddress(this.host, this.port)
         );
 
-        LogstashEncoder logstashEncoder = new LogstashEncoder();
-        logstashEncoder.setCustomFields("{\"servicename\":\"" + this.appName + "\"}");
-        logstashTcpSocketAppender.setEncoder(logstashEncoder);
+        ShortenedThrowableConverter throwableConverter = new ShortenedThrowableConverter();
+        throwableConverter.setRootCauseFirst(true);
+        logstashEncoder.setThrowableConverter(throwableConverter);
+        logstashEncoder.setCustomFields(customFields);
 
-        ShortenedThrowableConverter shortenedThrowableConverter = new ShortenedThrowableConverter();
-        shortenedThrowableConverter.setRootCauseFirst(true);
-        logstashEncoder.setThrowableConverter(shortenedThrowableConverter);
+        logstashAppender.setEncoder(logstashEncoder);
+        logstashAppender.start();
 
-        logstashEncoder.start();
+        // Wrap the appender in an Async appender for performance
+        AsyncAppender asyncLogstashAppender = new AsyncAppender();
+        asyncLogstashAppender.setContext(context);
+        asyncLogstashAppender.setName(ASYNC_LOG_STASH_APPENDER_NAME);
+        asyncLogstashAppender.setQueueSize(this.queueSize);
+        asyncLogstashAppender.addAppender(logstashAppender);
+        asyncLogstashAppender.start();
 
-        AsyncAppender asyncAppender = new AsyncAppender();
-        asyncAppender.setContext(context);
-        asyncAppender.setName(ASYNC_LOG_STASH_APPENDER_NAME);
-        asyncAppender.setQueueSize(this.queueSize);
-        asyncAppender.addAppender(logstashTcpSocketAppender);
-
-        asyncAppender.start();
-
-        context.getLogger("ROOT").addAppender(asyncAppender);
+        context.getLogger("ROOT").addAppender(asyncLogstashAppender);
     }
 }
