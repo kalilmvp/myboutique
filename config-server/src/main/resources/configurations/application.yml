@@ -5,7 +5,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${SERVICE_URL_DEFAULT_ZONE}
 
 name:
   value: kalilmvp

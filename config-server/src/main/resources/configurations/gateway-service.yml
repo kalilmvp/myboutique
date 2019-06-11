@@ -1,8 +1,11 @@
 server:
-  port: 8222
+  port: 8340
 
 eureka:
+  instance:
+    preferIpAddress: true
   client:
+    registerWithEureka: true
     fetchRegistry: true
 
 zuul:
