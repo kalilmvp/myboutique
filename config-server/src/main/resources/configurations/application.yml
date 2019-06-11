@@ -1,9 +1,12 @@
+#instance:
+#    hostname: localhost
+# http://localhost:8761/eureka/
+# ${SERVICE_URL_DEFAULT_ZONE}
+
 eureka:
-  instance:
-    hostname: localhost
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${SERVICE_URL_DEFAULT_ZONE}
 
 name:
   value: kalilmvp
