@@ -1,12 +1,9 @@
 server:
   port: 8340
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
+#eureka:
+#  instance:
+#    hostname: ${EUREKA_HOST}
 
 zuul:
   routes:
