@@ -1,0 +1,163 @@
+version: '3'
+services:
+
+  config-server:
+    image: kalilmvp/config-server:0.0.1-SNAPSHOT
+    container_name: boutique-config-server
+    build:
+      context: ./config-server
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    networks:
+      - boutique-network
+
+  eureka-server:
+    image: kalilmvp/boutique-eureka-server:0.0.1-SNAPSHOT
+    container_name: boutique-eureka-server
+    build:
+      context: ./boutique-eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    entrypoint: /opt/eureka-server.sh
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
+    depends_on:
+      - config-server
+    links:
+      - config-server:config-server
+    networks:
+      - boutique-network
+
+  api-gateway:
+    image: kalilmvp/boutique-api-gateway:0.0.1-SNAPSHOT
+    container_name: boutique-api-gateway
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8340:8340"
+    entrypoint: /opt/default.sh
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SERVICE_URL_DEFAULT_ZONE: http://eureka-server:8761/eureka
+    depends_on:
+      - config-server
+      - eureka-server
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+    networks:
+      - boutique-network
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - boutique-network
+
+  postgres:
+    image: postgres:10.5-alpine
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: demo
+    networks:
+      - boutique-network
+
+  product-service:
+    image: kalilmvp/product-service:0.0.1-SNAPSHOT
+    container_name: boutique-product-service
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    ports:
+      - "9994:9994"
+    depends_on:
+      - config-server
+    entrypoint: /opt/default.sh
+    environment:
+      SPRING_ZIPKIN_BASE: http://zipkin:9411
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/demo
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+      - zipkin:zipkin
+      - postgres:postgres
+    networks:
+      - boutique-network
+
+  customer-service:
+    image: kalilmvp/customer-service:0.0.1-SNAPSHOT
+    container_name: boutique-customer-service
+    build:
+      context: ./customer-service
+      dockerfile: Dockerfile
+    ports:
+      - "9992:9992"
+    depends_on:
+      - config-server
+    entrypoint: /opt/default.sh
+    environment:
+      SPRING_ZIPKIN_BASE: http://zipkin:9411
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/demo
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+      - zipkin:zipkin
+      - postgres:postgres
+    networks:
+      - boutique-network
+
+  order-service:
+    image: kalilmvp/order-service:0.0.1-SNAPSHOT
+    container_name: boutique-order-service
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    ports:
+      - "9993:9993"
+    depends_on:
+      - config-server
+    entrypoint: /opt/default.sh
+    environment:
+      SPRING_ZIPKIN_BASE: http://zipkin:9411
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/demo
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+      - zipkin:zipkin
+      - postgres:postgres
+    networks:
+      - boutique-network
+
+  hystrix-dashboard:
+    image: kalilmvp/hystrix-dashboard:0.0.1-SNAPSHOT
+    container_name: hystrix-dashboard
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "9995:9995"
+    entrypoint: /opt/default.sh
+    environment:
+      SPRING_CLOUD_CONFIG_URI: http://config-server:8888
+      SERVICE_URL_DEFAULT_ZONE: http://eureka-server:8761/eureka
+    depends_on:
+      - config-server
+      - eureka-server
+    links:
+      - config-server:config-server
+      - eureka-server:eureka-server
+    networks:
+      - boutique-network
+
+networks:
+  boutique-network:
+    driver: bridge
