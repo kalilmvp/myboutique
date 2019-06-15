@@ -141,7 +141,7 @@ services:
     image: kalilmvp/hystrix-dashboard:0.0.1-SNAPSHOT
     container_name: hystrix-dashboard
     build:
-      context: ./api-gateway
+      context: ./hystrix-dashboard
       dockerfile: Dockerfile
     ports:
       - "9995:9995"

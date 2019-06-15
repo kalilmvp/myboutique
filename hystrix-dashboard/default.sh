@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Gateway Server bash"
+echo "Hystrix Dashboard bash"
 
 while ! nc -z config-server 8888 ; do
     echo "Waiting for the Config Server"
