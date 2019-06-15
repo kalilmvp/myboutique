@@ -2,8 +2,6 @@ server:
   port: 9994
 
 eureka:
-  instance:
-    hostname: product-service
   client:
     registerWithEureka: true
     fetchRegistry: true
